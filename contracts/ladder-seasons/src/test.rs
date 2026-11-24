@@ -1,5 +1,3 @@
-#![cfg(test)]
-
 use soroban_sdk::{testutils::Address as _, Address, Env};
 
 use super::*;
@@ -23,8 +21,7 @@ fn test_season_transition_snapshot_success() {
     let (client, admin) = setup(&env);
 
     client.upsert_season(
-        &admin, &1, &500, &9800, &1_000_000, &false,
-        &7500, &50, &1_100_000, &true,
+        &admin, &1, &500, &9800, &1_000_000, &false, &7500, &50, &1_100_000, &true,
     );
 
     let snap = client.season_transition_snapshot(&1);
@@ -46,8 +43,7 @@ fn test_season_transition_snapshot_paused() {
     let (client, admin) = setup(&env);
 
     client.upsert_season(
-        &admin, &2, &120, &4200, &900_000, &true,
-        &3000, &20, &950_000, &false,
+        &admin, &2, &120, &4200, &900_000, &true, &3000, &20, &950_000, &false,
     );
 
     let snap = client.season_transition_snapshot(&2);
@@ -83,8 +79,7 @@ fn test_demotion_cutoff_success() {
     let (client, admin) = setup(&env);
 
     client.upsert_season(
-        &admin, &3, &300, &8000, &2_000_000, &false,
-        &5000, &100, &2_100_000, &true,
+        &admin, &3, &300, &8000, &2_000_000, &false, &5000, &100, &2_100_000, &true,
     );
 
     let cutoff = client.demotion_cutoff(&3);
@@ -106,8 +101,7 @@ fn test_demotion_cutoff_window_closed() {
     let (client, admin) = setup(&env);
 
     client.upsert_season(
-        &admin, &4, &200, &6000, &1_500_000, &false,
-        &4000, &80, &1_600_000, &false,
+        &admin, &4, &200, &6000, &1_500_000, &false, &4000, &80, &1_600_000, &false,
     );
 
     let cutoff = client.demotion_cutoff(&4);

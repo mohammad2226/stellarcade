@@ -144,6 +144,7 @@ members = [
     "profile-perks",
     "quest-ledger-v2",
     "queue-rewards",
+    "ladder-seasons",
 ]
 
 exclude = [
@@ -162,7 +163,6 @@ exclude = [
     "fanout-distributor",
     "guild-progress",
     "ladder-checkpoints",
-    "ladder-seasons",
     "loot-crate",
     "map-voting",
     "mission-ledger",

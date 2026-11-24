@@ -14,6 +14,7 @@
 
 #![no_std]
 #![allow(unexpected_cfgs)]
+#![allow(clippy::too_many_arguments)]
 
 mod storage;
 mod types;
